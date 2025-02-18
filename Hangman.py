@@ -16,7 +16,7 @@ def image(imag):
         st.markdown(
         f'''<style>
     .stApp{{
-        # background-image: url('data:image/png;base64,{encode}');
+
         background-image: url("{imag}");
         background-size: cover;
         background-position: top;
