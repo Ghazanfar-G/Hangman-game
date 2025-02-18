@@ -1,6 +1,6 @@
 import random
 import streamlit as st
-import base64
+# import base64
 def init():
     if 'com' not in st.session_state:
         words=['python','computer','technology','science','javascript','introduction']
@@ -11,12 +11,13 @@ def init():
         st.session_state.gameover=False
     
 def image(imag):
-        with open(imag,'rb')as image:
-            encode=base64.b64encode(image.read()).decode()
+        # with open(imag,'rb')as image:
+        #     encode=base64.b64encode(image.read()).decode()
         st.markdown(
         f'''<style>
     .stApp{{
-        background-image: url('data:image/png;base64,{encode}');
+        # background-image: url('data:image/png;base64,{encode}');
+        background-image: url("{imag}");
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
@@ -24,7 +25,7 @@ def image(imag):
 </style>''',unsafe_allow_html=True
     )
 def game():
-    image('ahangman.png')
+    image('https://github.com/Ghazanfar-G/Hangman-game/blob/main/ahangman.png?raw=true')
 
     st.title('🦸Welcome to Hangman game')
     init()
