@@ -2,7 +2,11 @@ import random
 import streamlit as st
 def init():
     if 'com' not in st.session_state:
-        words=['python','computer','technology','science','javascript','introduction']
+        words=['Python','Computer','Technology','Science','Javascript','Introduction','Apple','Chair',
+        'House','Train','Money','Table','Light','Water','Happy','Smile',
+        'Balloon','Thunder','Science','Machine','Lantern','Sunrise','Capture','Diamond','Journey','Mystery',
+        'Adventure','Character','Algorithm','Butterfly','Classroom','Telescope','Knowledge','Chocolate',
+        'Waterfall','Dangerous']
         st.session_state.com=random.choice(words)
         st.session_state.attempts=6
         st.session_state.guesses=['_']*len(st.session_state.com)
@@ -30,7 +34,7 @@ def game():
     st.write('You have to find a word by writting letters of word one by one. All the best.')
     st.write(f'Attempts : {st.session_state.attempts}')
     st.write('Word '+''.join(st.session_state.guesses))
-    user=st.text_input('Enter letter here: ',key='user',value='').strip().lower()
+    user=st.text_input('Enter letter here: ',key='user',value='').strip().capitalize()
     if st.button('Next'):
         if not user:
             st.warning('First enter a letter.')
